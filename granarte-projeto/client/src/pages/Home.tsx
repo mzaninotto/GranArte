@@ -1,3 +1,4 @@
+import heroImage from '../assets/images/hero-ingredients.png';
 import { motion } from "framer-motion";
 import ProductCard from "@/components/ProductCard";
 import { Button } from "@/components/ui/button";
@@ -7,16 +8,14 @@ export default function Home() {
   const products = [
     {
       title: "Granola Salgada Lemon Pepper",
-      price: "R$ 35,00",
-      description: "Uma explosão de sabor com o toque cítrico do lemon pepper. Perfeita para saladas, sopas ou como snack saudável a qualquer hora.",
+      description: "Ingredientes: castanha de caju, lascas de amêndoas, flocos de milho, flocos de arroz, semente de abóbora, semente de girassol e Lemon Pepper. Sem glúten, vegana e sem conservantes.",
       image: "/images/granola-salgada-original.png",
       link: "https://loja.infinitepay.io/granarte_granolas/crv9741-granola-salgada-lemon-pepper",
       type: "salty" as const
     },
     {
       title: "Granola Tradicional",
-      price: "R$ 35,00",
-      description: "A clássica receita caseira. Crocante, dourada e com a doçura equilibrada do mel. Ideal para acompanhar iogurtes, frutas e açaí.",
+      description: "Ingredientes: castanha de caju, castanha do Pará, macadâmia, avelã, nozes, amêndoas, sementes de girassol, semente de abóbora, gergelim, canela, essência de baunilha, óleo de coco, chips de coco e rapadura. Vegana e sem conservantes.",
       image: "/images/granola-doce-original.png",
       link: "https://loja.infinitepay.io/granarte_granolas/nll8466-granola-tradicional",
       type: "sweet" as const
@@ -49,8 +48,8 @@ export default function Home() {
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-black/40 z-10" />
           <img 
-            src="/images/hero-granola.png" 
-            alt="Granola Artesanal" 
+            src={heroImage} 
+            alt="Ingredientes Naturais" 
             className="w-full h-full object-cover"
           />
         </div>
@@ -101,73 +100,100 @@ export default function Home() {
       </div>
 
       {/* Products Section */}
-      <section id="produtos" className="py-24 bg-muted/30">
+      <section id="produtos" className="py-24 bg-background">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="font-serif text-4xl md:text-5xl text-foreground mb-4">Nossas Criações</h2>
-            <p className="text-muted-foreground max-w-lg mx-auto">
-              Escolha entre o doce conforto da tradição ou a ousadia do sabor salgado.
-            </p>
+            <h2 className="font-serif text-4xl md:text-5xl font-bold text-primary mb-4">Nossas Granolas</h2>
+            <div className="w-24 h-1 bg-amber-200 mx-auto rounded-full" />
           </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            {products.map((product) => (
-              <ProductCard key={product.title} {...product} />
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-5xl mx-auto">
+            {products.map((product, index) => (
+              <ProductCard
+                key={index}
+                title={product.title}
+                price=""
+                description={product.description}
+                image={product.image}
+                link={product.link}
+                type={product.type}
+              />
             ))}
           </div>
         </div>
       </section>
 
       {/* About Section */}
-      <section id="sobre" className="py-24 bg-background overflow-hidden">
+      <section id="sobre" className="py-24 bg-amber-50/50">
         <div className="container mx-auto px-6">
-          <div className="flex flex-col md:flex-row items-center gap-16">
-            <div className="w-full md:w-1/2">
-              <div className="relative aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl">
-                 <img 
-                  src="/images/hero-granola.png" 
-                  alt="Processo artesanal" 
-                  className="w-full h-full object-cover"
-                />
-              </div>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div className="relative">
+              <div className="absolute -inset-4 bg-amber-200/20 rounded-2xl -rotate-2" />
+              <img 
+                src="/images/processo-artesanal.png" 
+                alt="Processo Artesanal" 
+                className="relative rounded-2xl shadow-2xl w-full h-[500px] object-cover"
+              />
             </div>
-            <div className="w-full md:w-1/2">
-              <span className="text-primary font-bold tracking-wider text-sm uppercase mb-4 block">Nossa Essência</span>
-              <h2 className="font-serif text-4xl md:text-5xl mb-6 leading-tight">
-                Mais que um alimento, <br/> um estilo de vida.
+            <div>
+              <h2 className="font-serif text-4xl md:text-5xl font-bold text-primary mb-8 leading-tight">
+                Ingredientes que <br/> contam uma história.
               </h2>
-              <p className="text-muted-foreground text-lg mb-6 leading-relaxed">
-                A Gran'Arte nasceu do desejo de oferecer uma alimentação de verdade, sem abrir mão do sabor. 
-                Acreditamos que o que comemos transforma quem somos.
-              </p>
-              <p className="text-muted-foreground text-lg mb-8 leading-relaxed">
-                Cada lote é preparado cuidadosamente, respeitando o tempo de cada ingrediente para alcançar 
-                a crocância perfeita e o equilíbrio ideal de sabores.
-              </p>
-              <Button variant="outline" className="rounded-full border-primary text-primary hover:bg-primary hover:text-white" asChild>
-                <a href="https://wa.me/5511976350421">Fale Conosco</a>
-              </Button>
+              <div className="space-y-6 text-muted-foreground leading-relaxed">
+                <p>
+                  Na Gran'Arte, acreditamos que a alimentação deve ser um momento de prazer e nutrição. Por isso, selecionamos cada ingrediente para criar uma experiência única de sabor e textura.
+                </p>
+                <p>
+                  Nossas granolas são produzidas artesanalmente, garantindo que cada pacote mantenha o padrão de qualidade e o carinho que sua saúde merece.
+                </p>
+                <div className="pt-8 grid grid-cols-2 gap-8">
+                  <div>
+                    <h4 className="font-serif text-2xl font-bold text-primary mb-2">100%</h4>
+                    <p className="text-xs uppercase tracking-wider font-bold opacity-60">Natural</p>
+                  </div>
+                  <div>
+                    <h4 className="font-serif text-2xl font-bold text-primary mb-2">Sabor</h4>
+                    <p className="text-xs uppercase tracking-wider font-bold opacity-60">Incomparável</p>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="bg-foreground text-background py-16">
-        <div className="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-8">
-          <div className="text-center md:text-left flex flex-col md:flex-row items-center gap-4">
-            <img src="/images/logo-granarte.png" alt="Gran'Arte Logo" className="h-16 w-auto brightness-0 invert" />
+      <footer className="bg-primary text-primary-foreground py-16">
+        <div className="container mx-auto px-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
             <div>
-              <h3 className="font-serif text-2xl font-bold mb-2">Gran'Arte</h3>
-              <p className="text-white/60 text-sm">Nutrindo corpo e alma.</p>
+              <div className="flex items-center gap-2 mb-6">
+                <img src="/images/logo-granarte.png" alt="Gran'Arte Logo" className="h-12 w-auto brightness-0 invert" />
+                <span className="font-serif text-2xl font-bold tracking-tight">Gran'Arte</span>
+              </div>
+              <p className="text-primary-foreground/70 text-sm leading-relaxed">
+                Transformando o seu dia a dia com granolas artesanais, nutritivas e repletas de sabor.
+              </p>
+            </div>
+            <div>
+              <h4 className="font-serif text-xl mb-6">Links Rápidos</h4>
+              <ul className="space-y-3 text-sm opacity-70">
+                <li><a href="#" className="hover:opacity-100 transition-opacity">Início</a></li>
+                <li><a href="#produtos" className="hover:opacity-100 transition-opacity">Produtos</a></li>
+                <li><a href="#sobre" className="hover:opacity-100 transition-opacity">Nossa História</a></li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="font-serif text-xl mb-6">Contato</h4>
+              <div className="space-y-4 text-sm opacity-70">
+                <p>WhatsApp: (11) 97635-0421</p>
+                <p>Instagram: @granarte_granolas</p>
+                <p>São Paulo, SP</p>
+              </div>
             </div>
           </div>
-          <div className="flex gap-6 text-sm text-white/80">
-            <a href="https://www.instagram.com/granarte_granolas/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Instagram</a>
-            <a href="https://wa.me/5511976350421" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">WhatsApp</a>
-          </div>
-          <div className="text-xs text-white/40">
-            © 2026 Gran'Arte. Todos os direitos reservados.
+          <div className="pt-12 border-t border-white/10 text-center text-xs opacity-50">
+            <p>&copy; 2026 Gran'Arte. Todos os direitos reservados.</p>
           </div>
         </div>
       </footer>

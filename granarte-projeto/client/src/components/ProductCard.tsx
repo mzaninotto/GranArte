@@ -40,9 +40,9 @@ export default function ProductCard({ title, price, description, image, link, ty
           <div className="flex justify-between items-start mb-2">
             <h3 className="font-serif text-xl font-bold text-foreground">{title}</h3>
           </div>
-          <p className="text-muted-foreground text-sm leading-relaxed mb-4">
-            {description}
-          </p>
+        <p className="text-muted-foreground text-sm leading-relaxed mb-4 min-h-[6rem]">
+          {description}
+        </p>
         </CardContent>
         <CardFooter className="p-6 pt-0">
           <Button 
