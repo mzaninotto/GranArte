@@ -2,7 +2,7 @@ import heroImage from '../assets/images/hero-ingredients.png';
 import { motion } from "framer-motion";
 import ProductCard from "@/components/ProductCard";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Leaf, Heart, Star } from "lucide-react";
+import { ArrowRight, Leaf, Heart, Star, Instagram as InstagramIcon, MessageCircle as WhatsappIcon } from "lucide-react";
 
 export default function Home() {
   const products = [
@@ -186,8 +186,25 @@ export default function Home() {
             <div>
               <h4 className="font-serif text-xl mb-6">Contato</h4>
               <div className="space-y-4 text-sm opacity-70">
-                <p>WhatsApp: (11) 97635-0421</p>
-                <p>Instagram: @granarte_granolas</p>
+                <a 
+                  href="https://wa.me/5511976350421" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 hover:opacity-100 transition-opacity"
+                >
+                  <WhatsappIcon className="w-5 h-5" />
+                  (11) 97635-0421
+                </a>
+                <br />
+                <a 
+                  href="https://instagram.com/granarte_granolas" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 hover:opacity-100 transition-opacity"
+                >
+                  <InstagramIcon className="w-5 h-5" />
+                  @granarte_granolas
+                </a>
                 <p>São Paulo, SP</p>
               </div>
             </div>
