@@ -135,6 +135,7 @@
       background: var(--card); border-radius: 16px; overflow: hidden;
       box-shadow: 0 4px 24px rgba(0,0,0,0.08);
       transition: box-shadow 0.3s; animation: cardIn 0.5s ease both;
+      display: flex; flex-direction: column;
     }
     .card:nth-child(2) { animation-delay: 0.15s; }
     @keyframes cardIn {
@@ -151,13 +152,13 @@
     }
     .badge-sweet { background: hsl(43, 80%, 90%); color: hsl(35, 60%, 30%); }
     .badge-salty { background: hsl(100, 30%, 88%); color: hsl(100, 40%, 25%); }
-    .card-content { padding: 24px 24px 12px; }
+    .card-content { padding: 24px 24px 12px; flex: 1; }
     .card-content h3 {
       font-family: 'Playfair Display', serif;
       font-size: 1.25rem; font-weight: 700; margin-bottom: 10px;
     }
     .card-content p {
-      font-size: 0.875rem; color: var(--muted); line-height: 1.65; min-height: 6rem;
+      font-size: 0.875rem; color: var(--muted); line-height: 1.65;
     }
     .card-footer { padding: 16px 24px 24px; }
     .btn-buy {
@@ -314,7 +315,7 @@
           </div>
           <div class="card-content">
             <h3>Granola Salgada Lemon Pepper</h3>
-            <p>Ingredientes: castanha de caju, lascas de amêndoas, flocos de milho, flocos de arroz, semente de abóbora, semente de girassol e Lemon Pepper. Sem glúten, vegana e sem conservantes.</p>
+            <p>Feita com ingredientes selecionados como castanha de caju, lascas de amêndoas, flocos de milho, crispies de arroz, semente de abóbora, semente de girassol, azeite extra virgem, sal e Lemon Pepper. Sem glúten, vegana e sem conservantes.</p>
           </div>
           <div class="card-footer">
             <a href="https://loja.infinitepay.io/granarte_granolas/crv9741-granola-salgada-lemon-pepper" target="_blank" rel="noopener noreferrer" class="btn-buy">
@@ -331,7 +332,7 @@
           </div>
           <div class="card-content">
             <h3>Granola Tradicional</h3>
-            <p>Ingredientes: castanha de caju, castanha do Pará, macadâmia, avelã, nozes, amêndoas, sementes de girassol, semente de abóbora, gergelim, canela, essência de baunilha, óleo de coco, chips de coco e rapadura. Vegana e sem conservantes.</p>
+            <p>Feita com castanha de caju, castanha do Pará, macadâmia, avelã, nozes, amêndoas, aveia, sementes de girassol, semente de abóbora, gergelim, canela, essência de baunilha, óleo de coco extra virgem, chips de coco e rapadura. Vegana e sem conservantes.</p>
           </div>
           <div class="card-footer">
             <a href="https://loja.infinitepay.io/granarte_granolas/nll8466-granola-tradicional" target="_blank" rel="noopener noreferrer" class="btn-buy">
